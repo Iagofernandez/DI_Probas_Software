@@ -3,8 +3,12 @@ import unittest
 
 class Proba(unittest.TestCase):
 
-    def test(self):
+    def testUn(self):
         pass
 
-if __name__=="__main__":
+    def testDous(self):
+        raise AssertionError
+
+
+if __name__ == "__main__":
     unittest.main()
