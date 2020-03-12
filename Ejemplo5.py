@@ -21,20 +21,17 @@ def cadrado(n):
 
 class ProbaCadrados(unittest.TestCase):
 
-    def testCadrados(self):
-        l = [0, 1, 2, 3, 4]
-        r = cadrados(l)
-        self.assertEqual(r, [0, 1, 4, 9, 16])
+    def setUp(self):
+        print("preparando a proba")
+        self.l = [0, 1, 2, 3, 4]
 
     def testCadrado(self):
-        self.assertEqual(cadrados(2), 4)
+        print("Executando a proba")
+        self.assertEqual(cadrados(self.l), [0, 1, 4, 9, 16])
 
-    def testCadrados2(self):
-        l = [0, 1, 2, 3, 4]
-        r = list()
-        for n in l:
-            r.append(cadrado(n))
-        self.assertEqual(r, [0, 1, 4, 9, 16])
+    def tearDown(self):
+        print("Destruindo o contexto")
+        del self.l
 
 
 if __name__ == "__main__":
